@@ -80,6 +80,11 @@ public abstract class BeanFactoryUtils {
 	 */
 	public static String transformedBeanName(String name) {
 		Assert.notNull(name, "'name' must not be null");
+		/**
+		 * 去除BeanFactory的修饰符，即以 & 开头，例如若name="&TestBean",则首先去除 &
+		 * 从而使得name="TestBean".
+		 */
+		//不以 & 开头
 		if (!name.startsWith(BeanFactory.FACTORY_BEAN_PREFIX)) {
 			return name;
 		}

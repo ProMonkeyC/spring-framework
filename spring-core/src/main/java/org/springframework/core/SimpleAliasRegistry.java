@@ -212,6 +212,7 @@ public class SimpleAliasRegistry implements AliasRegistry {
 	 * @return the transformed name
 	 */
 	public String canonicalName(String name) {
+		//如果存在alias即别名，则会使用该别名最终所代表的bean的name
 		String canonicalName = name;
 		// Handle aliasing...
 		String resolvedName;
